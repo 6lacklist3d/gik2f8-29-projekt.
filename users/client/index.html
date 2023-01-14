@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon"
+        href="data:image/x-icon;"
+        type="image/x-icon" />
+  <title>Zazat</title>
+</head>
+
+<body>
+  <main id="root"
+        class="pt-24 bg-gradient-to-br from-red-600 to-blue-400 min-h-screen">
+    <h1 class="text-center mb-10 text-7xl text-blue-400">Users</h1>
+    <!-- Sektion som gör att formuläret och listan kommer att hamna bredvid varandra. -->
+    <section class="flex gap-10 w-full xl:w-4/5 mx-2 xl:mx-auto bg-white bg-opacity-75 p-5 rounded-lg">
+      <!-- Sektion för formuläret -->
+      <section class="flex-1">
+        <h2 class="mb-6 text-3xl text-blue-900">Add user</h2>
+        <!-- Formuläret är döpt till todoForm och det namnet kan användas för att söka fram formuläret direkt i JavaScript-koden. -->
+        <form id="userForm"
+              name="userForm">
+
+
+          <section class="mb-2">
+            <label class="block pr-5 mb-2 text-xl"
+                   for="name">First & last name</label>
+            <p class="message text-sm text-red-700 mb-2 hidden">
+              Error message
+            </p>
+            <input type="text"
+                   id="name"
+                   name="name"
+                   class="w-full rounded-md border-blue-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+          </section>
+
+          <section class="mb-2">
+            <label class="block pr-5 mb-2 text-xl"
+                   for="email">E-mail</label>
+            <p class="message text-sm text-red-700 mb-2 hidden">
+              Error message
+            </p>
+            <input type="email"
+                   id="email"
+                   name="email"
+                   class="w-full rounded-md border-blue-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+          </section>
+
+
+          <section class="mb-2">
+            <label class="block pr-5 mb-2 text-xl"
+                   for="pass">Password</label>
+            <p class="message text-sm text-red-700 mb-2 hidden">
+              Error message
+            </p>
+            <input type="password"
+                   id="pass"
+                   name="password"
+                   class="w-full rounded-md border-blue-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+          </section>
+
+
+          <!-- Följande sektioner är likadana för övriga fält i formuläret; description och dueDate -->
+          
+          <section class="mb-2">
+            <label class="block pr-5 mb-2 text-xl"
+                   for="title">Registerd on date </label>
+            <p class="message text-sm text-red-700 mb-2 hidden">
+              Error message
+            </p>
+            <input type="date"
+                   id="dueDate"
+                   name="dueDate"
+                   class="w-full rounded-md border-blue-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+          </section>
+          <!-- Knappen är av typen submit för att den ska vara knuten till formulärets submit-event.  -->
+          <button name="submitUserForm"
+                  class="rounded-md bg-blue-500 hover:bg-red-500 px-4 py-1"
+                  type="submit">
+            Save user
+          </button>
+        </form>
+      </section>
+      <!-- Sektion där listan med uppgifter ska bo. Placeras bredvid formuläret. -->
+      <section class="flex-1 px-5">
+        <h2 class="mb-6 text-3xl text-orange-900">All users</h2>
+        <!-- Ul-element som kommer att fyllas på dynamiskt med li-element för varje uppgift i listan -->
+        <ul id="allUsersList">
+          <!-- Allt innanför här ska skapas dynamiskt med JavaScript, så se till att inget list-element läggs till här i denna HTML-fil.  -->
+        </ul>
+      </section>
+    </section>
+  </main>
+  <script src="Api.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
